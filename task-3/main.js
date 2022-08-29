@@ -12,10 +12,9 @@ prompt.get('input', function (err, result) {
         arr.push(n[i]);
 
 
-    } delete arr[1], delete arr[3], delete arr[5];
+    } let a=arr.filter(function(i){return i!==arr[1] && i!==arr[3] && i!==arr[5] })
 
-
-    console.log(arr.join(' '));
+    console.log(a.join(" "));
 
   
 });
