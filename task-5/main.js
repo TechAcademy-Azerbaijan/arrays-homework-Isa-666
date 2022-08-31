@@ -4,16 +4,18 @@ prompt.start();
 
 prompt.get('input', function (err, result) {
   
-       let n = result.input.split(" ") //3 5 -7 7 5 -9 -4
+   let n = result.input.split(" ") //3 5 -7 7 5 -9 -4
     let arr = [];
-    for (let i = 0; i < n.length; i++) {
-        arr.push(n[i]);
-
-    }
-    [arr[0], arr[1]] = [arr[1], arr[0]];
-    [arr[2], arr[3]] = [arr[3], arr[2]];
-    [arr[4], arr[5]] = [arr[5], arr[4]];
-
+    for (let i = 0; i < n.length; i+=2) {
+    let element1=parseInt(n[i])
+    let element2=parseInt(n[i+1])
+    if (element2) {
+       arr.push(element2)  
+    } 
+   
+    arr.push(element1);
+    
+    } 
     console.log(arr.join(' '));
   
 });
