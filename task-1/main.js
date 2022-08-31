@@ -4,17 +4,19 @@ prompt.start();
 
 prompt.get('input', function (err, result) {
   
-   let n = result.input.split(" ");
-    let arr = [];
-    let count = 0;
-    for (let i = 0; i < n.length; i++) {
-
-        arr.push(n[i]);
-        count++;
-
+  let numbers = result.input.split(" ");
+  let count = parseInt(numbers.length);
+  for (let i = 0; i < numbers.length; i++) {
+    let element = numbers[i];
+    for (let j = i + 1; j < numbers.length; j++) {
+      let next_element = numbers[j];
+      if (element === next_element) {
+        count--;
+      }
     }
 
+  }
 
-    console.log(count - 1);
+  console.log(count);
   
 });
