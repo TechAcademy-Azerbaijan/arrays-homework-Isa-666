@@ -4,15 +4,16 @@ prompt.start();
 
 prompt.get('input', function (err, result) {
   
-      let n = result.input.split(" ");
+      let numbers = result.input.split(" "); //14 16 3 7 17 19 9
     let arr = [];
+    for (let i = 0; i < numbers.length; i++) {
+        const element = numbers[i];
+        if (i % 2 == 0) {
+            arr.push(numbers[i])
+        }
 
-    for (let i = 0; i < n.length; i++) {
-        arr.push(n[i]);
+    }
+    console.log(arr.join(' '));
 
-
-    } let a = arr.filter(function (i) { return i !== arr[1] && i !== arr[3] && i !== arr[5] })
-
-    console.log(a.join(" "));
   
 });
